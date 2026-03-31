@@ -5,7 +5,7 @@
   <!-- 添加区域 -->
   <view class="add-section">
     <input 
-      placeholder="输入待办事项..." 
+      placeholder="输入待办的事项..." 
       bindinput="inputChange" 
       value="{{inputValue}}" 
       class="input" />
