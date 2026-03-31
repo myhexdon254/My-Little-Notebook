@@ -1,0 +1,27 @@
+<view class="container">
+  <!-- 大标题 -->
+  <view class="title">我的记事本</view>
+
+  <!-- 添加区域 -->
+  <view class="add-section">
+    <input 
+      placeholder="输入待办事项..." 
+      bindinput="inputChange" 
+      value="{{inputValue}}" 
+      class="input" />
+    <button type="primary" bindtap="addTodo" class="add-btn">添加</button>
+  </view>
+
+  <!-- 待办列表 -->
+  <view class="todo-list">
+    <view wx:for="{{todoList}}" wx:key="id" class="todo-item {{item.completed ? 'completed' : ''}}">
+      <checkbox bindchange="toggleComplete" data-id="{{item.id}}" checked="{{item.completed}}" />
+      <text class="todo-text">{{item.text}}</text>
+      <button bindtap="deleteTodo" data-id="{{item.id}}" class="delete-btn" size="mini">删除</button>
+    </view>
+  </view>
+
+  <view class="footer">
+    共 {{todoList.length}} 条待办事项
+  </view>
+</view>
